@@ -1,0 +1,145 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[french]{babel}
+\usepackage{amsmath, amssymb}
+\usepackage{graphicx}
+\usepackage{geometry}
+\geometry{margin=2cm}
+\usepackage{enumitem}
+\usepackage{float}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\usepackage{mathrsfs}  % \mathscr{C}
+\pagestyle{fancy}
+
+% Nettoyer les styles par défaut
+\fancyhf{}
+
+%Espace entre les subsections
+\titlespacing*{\subsection}{0pt}{5ex plus 0.5ex minus 0.2ex}{1.5ex plus 0.2ex}
+
+
+
+
+\begin{document}
+
+\subsection*{Exercice 1 :}
+\begin{enumerate}
+\item On factorise le numérateur : $2x^3-4x^2-3x+6=2x^2(x-2)-3(x-2)=(x-2)(2x^2-3)$.\\
+Pour $x\neq 2$ et $x\neq -2$ :
+$$\dfrac{2x^3-4x^2-3x+6}{x^2-4}=\dfrac{(x-2)(2x^2-3)}{(x-2)(x+2)}=\dfrac{2x^2-3}{x+2}.$$
+Par quotient, $\displaystyle\lim_{x\to 2}\dfrac{2x^2-3}{x+2}=\dfrac{5}{4}$.\\
+Donc $\displaystyle\lim_{x\to 2}\dfrac{2x^3-4x^2-3x+6}{x^2-4}=\dfrac{5}{4}$.
+
+\item On est en présence d'une forme indéterminée « $\infty-\infty$ ». On multiplie par la quantité conjuguée : pour $x>1$,
+$$\sqrt{x^2+x-1}-x=\dfrac{(x^2+x-1)-x^2}{\sqrt{x^2+x-1}+x}=\dfrac{x-1}{\sqrt{x^2+x-1}+x}.$$
+Donc
+$$\dfrac{\sqrt{x^2+x-1}-x}{\sqrt{x}}=\dfrac{x-1}{\sqrt{x}\left(\sqrt{x^2+x-1}+x\right)}=\dfrac{x\left(1-\frac{1}{x}\right)}{\sqrt{x}\cdot x\left(\sqrt{1+\frac{1}{x}-\frac{1}{x^2}}+1\right)}=\dfrac{1-\frac{1}{x}}{\sqrt{x}\left(\sqrt{1+\frac{1}{x}-\frac{1}{x^2}}+1\right)}.$$
+Le numérateur tend vers $1$, et le facteur $\sqrt{1+\frac{1}{x}-\frac{1}{x^2}}+1$ tend vers $2$ ; comme $\sqrt{x}\to+\infty$, le dénominateur tend vers $+\infty$.\\
+Donc $\displaystyle\lim_{x\to +\infty}\dfrac{\sqrt{x^2+x-1}-x}{\sqrt{x}}=0$.
+
+\item Par définition, $\operatorname{sh}(x)=\dfrac{e^x-e^{-x}}{2}$, donc
+$$\dfrac{\operatorname{sh}(x)}{e^x}=\dfrac{e^x-e^{-x}}{2e^x}=\dfrac{1-e^{-2x}}{2}.$$
+Comme $\displaystyle\lim_{x\to+\infty}e^{-2x}=0$ (composée), on obtient $\displaystyle\lim_{x\to +\infty}\dfrac{\operatorname{sh}(x)}{e^x}=\dfrac{1}{2}$.
+
+\item Forme indéterminée « $\infty-\infty$ ». Pour $x>0$,
+$$\sqrt{x^2+x}-x=\dfrac{(x^2+x)-x^2}{\sqrt{x^2+x}+x}=\dfrac{x}{\sqrt{x^2+x}+x}=\dfrac{x}{x\left(\sqrt{1+\frac{1}{x}}+1\right)}=\dfrac{1}{\sqrt{1+\frac{1}{x}}+1}.$$
+Or $\displaystyle\lim_{x\to+\infty}\sqrt{1+\frac{1}{x}}+1=2$, donc $\displaystyle\lim_{x\to +\infty}\left(\sqrt{x^2+x}-x\right)=\dfrac{1}{2}$.
+
+\item Pour tout $x>0$, $-1\leq\cos(x^2+x-1)\leq 1$, donc
+$$-\dfrac{1}{x}\leq\dfrac{\cos(x^2+x-1)}{x}\leq\dfrac{1}{x}.$$
+Comme $\displaystyle\lim_{x\to+\infty}-\dfrac{1}{x}=\lim_{x\to+\infty}\dfrac{1}{x}=0$, le théorème des gendarmes donne $\displaystyle\lim_{x\to +\infty}\dfrac{\cos(x^2+x-1)}{x}=0$.
+\end{enumerate}
+
+\subsection*{Exercice 2 :}
+\begin{enumerate}
+\item Pour tout réel $x$, $e^x+1>0$, donc le dénominateur ne s'annule jamais : $D_f=\mathbb{R}$.
+
+\item \textbf{En $+\infty$ :} pour tout réel $x$, $f(x)=\dfrac{e^x}{e^x+1}=\dfrac{1}{1+e^{-x}}$. Comme $\displaystyle\lim_{x\to+\infty}e^{-x}=0$, on a $\displaystyle\lim_{x\to+\infty}f(x)=1$.\\
+\textbf{En $-\infty$ :} $\displaystyle\lim_{x\to-\infty}e^x=0$, donc par quotient $\displaystyle\lim_{x\to-\infty}f(x)=\dfrac{0}{0+1}=0$.
+
+\item Comme $\displaystyle\lim_{x\to+\infty}f(x)=1$, la droite d'équation $y=1$ est asymptote horizontale à $\mathscr{C}_f$ au voisinage de $+\infty$.\\
+Comme $\displaystyle\lim_{x\to-\infty}f(x)=0$, la droite d'équation $y=0$ est asymptote horizontale à $\mathscr{C}_f$ au voisinage de $-\infty$.
+\end{enumerate}
+
+\subsection*{Exercice 3 :}
+\begin{enumerate}
+\item Pour tout réel $x$, $e^x+e^{-x}>0$, donc $f$ est définie sur $\mathbb{R}$.\\
+\textbf{En $+\infty$ :} en factorisant par $e^x$,
+$$f(x)=\dfrac{e^x\left(1-e^{-2x}\right)}{e^x\left(1+e^{-2x}\right)}=\dfrac{1-e^{-2x}}{1+e^{-2x}}.$$
+Comme $\displaystyle\lim_{x\to+\infty}e^{-2x}=0$, on a $\displaystyle\lim_{x\to+\infty}f(x)=1$.\\
+\textbf{En $-\infty$ :} en factorisant par $e^{-x}$,
+$$f(x)=\dfrac{e^{-x}\left(e^{2x}-1\right)}{e^{-x}\left(e^{2x}+1\right)}=\dfrac{e^{2x}-1}{e^{2x}+1}.$$
+Comme $\displaystyle\lim_{x\to-\infty}e^{2x}=0$, on a $\displaystyle\lim_{x\to-\infty}f(x)=\dfrac{-1}{1}=-1$.\\
+\textbf{Conséquence :} la courbe $\mathscr{C}_f$ admet deux asymptotes horizontales : la droite d'équation $y=1$ au voisinage de $+\infty$ et la droite d'équation $y=-1$ au voisinage de $-\infty$.
+
+\item $f$ est dérivable sur $\mathbb{R}$ comme quotient de fonctions dérivables dont le dénominateur ne s'annule pas. Avec $u(x)=e^x-e^{-x}$ et $v(x)=e^x+e^{-x}$, on a $u'=v$ et $v'=u$, donc
+$$f'(x)=\dfrac{u'v-uv'}{v^2}=\dfrac{v^2-u^2}{v^2}=1-\left(\dfrac{u}{v}\right)^2=1-f(x)^2.$$
+On peut aussi écrire explicitement : $v^2-u^2=(e^x+e^{-x})^2-(e^x-e^{-x})^2=4$, donc $f'(x)=\dfrac{4}{\left(e^x+e^{-x}\right)^2}$.
+
+\item Pour tout réel $x$, $f'(x)=\dfrac{4}{\left(e^x+e^{-x}\right)^2}>0$. Donc $f$ est strictement croissante sur $\mathbb{R}$.
+$$\begin{array}{|c|ccc|}
+\hline
+x & -\infty & & +\infty\\
+\hline
+f'(x) & & + & \\
+\hline
+ & & & 1\\
+f(x) & & \nearrow & \\
+ & -1 & & \\
+\hline
+\end{array}$$
+
+\item L'ensemble $\mathbb{R}$ est symétrique par rapport à $0$ et, pour tout réel $x$,
+$$f(-x)=\dfrac{e^{-x}-e^{x}}{e^{-x}+e^{x}}=-\dfrac{e^x-e^{-x}}{e^x+e^{-x}}=-f(x).$$
+Donc $f$ est impaire.
+\end{enumerate}
+
+\subsection*{Exercice 4 :}
+\begin{enumerate}
+\item $f$ est définie si et seulement si $x+1\neq 0$, donc $D_f=\mathbb{R}\setminus\{-1\}=]-\infty,-1[\,\cup\,]-1,+\infty[$.
+
+\item \textbf{En $\pm\infty$ :} $f$ est une fonction rationnelle ; sa limite en $\pm\infty$ est celle du quotient de ses termes de plus haut degré : $\dfrac{2x^2}{x}=2x$. Donc $\displaystyle\lim_{x\to+\infty}f(x)=+\infty$ et $\displaystyle\lim_{x\to-\infty}f(x)=-\infty$.\\
+\textbf{En $-1$ :} le numérateur tend vers $2-3+9=8>0$.
+\begin{itemize}
+\item Si $x\to-1^+$, alors $x+1\to0^+$, donc $\displaystyle\lim_{x\to-1^+}f(x)=+\infty$.
+\item Si $x\to-1^-$, alors $x+1\to0^-$, donc $\displaystyle\lim_{x\to-1^-}f(x)=-\infty$.
+\end{itemize}
+Donc la droite d'équation $x=-1$ est asymptote verticale à $\mathscr{C}_f$.
+
+\item $f$ est dérivable sur $D_f$ et, pour tout $x\neq-1$,
+$$f'(x)=\dfrac{(4x+3)(x+1)-(2x^2+3x+9)}{(x+1)^2}=\dfrac{2x^2+4x-6}{(x+1)^2}=\dfrac{2(x+3)(x-1)}{(x+1)^2}.$$
+Comme $(x+1)^2>0$ sur $D_f$, $f'(x)$ est du signe de $(x+3)(x-1)$. De plus $f(-3)=\dfrac{18-9+9}{-2}=-9$ et $f(1)=\dfrac{2+3+9}{2}=7$.
+$$\begin{array}{|c|ccccccccc|}
+\hline
+x & -\infty & & -3 & & -1 & & 1 & & +\infty\\
+\hline
+f'(x) & & + & 0 & - & \parallel & - & 0 & + & \\
+\hline
+ & & & -9 & & \parallel{+\infty} & & & & +\infty\\
+f(x) & & \nearrow & & \searrow & & \searrow & & \nearrow & \\
+ & -\infty & & & & -\infty\ \parallel & & 7 & & \\
+\hline
+\end{array}$$
+
+\item Pour tout $x\neq-1$,
+$$f(x)-(2x+1)=\dfrac{2x^2+3x+9-(2x+1)(x+1)}{x+1}=\dfrac{2x^2+3x+9-2x^2-3x-1}{x+1}=\dfrac{8}{x+1}.$$
+Donc $\displaystyle\lim_{x\to\pm\infty}\left[f(x)-(2x+1)\right]=0$ : la droite $\Delta$ d'équation $y=2x+1$ est asymptote oblique à $\mathscr{C}_f$ en $+\infty$ et en $-\infty$.\\
+\textbf{Position relative :} le signe de $f(x)-(2x+1)=\dfrac{8}{x+1}$ est celui de $x+1$.
+\begin{itemize}
+\item Sur $]-1,+\infty[$ : $f(x)-(2x+1)>0$, donc $\mathscr{C}_f$ est au-dessus de $\Delta$.
+\item Sur $]-\infty,-1[$ : $f(x)-(2x+1)<0$, donc $\mathscr{C}_f$ est en dessous de $\Delta$.
+\end{itemize}
+
+\item Le point $\Omega(-1,-1)$ est centre de symétrie de $\mathscr{C}_f$ si et seulement si, pour tout $x\in D_f$, $(-2-x)\in D_f$ et $f(-2-x)+f(x)=2\times(-1)=-2$.\\
+\textbf{Domaine :} $x\neq-1\iff -2-x\neq-1$, donc $D_f$ est symétrique par rapport à $-1$.\\
+\textbf{Calcul :} d'après la question précédente, $f(x)=2x+1+\dfrac{8}{x+1}$. Donc, pour $x\neq-1$,
+$$f(-2-x)+f(x)=\left[2(-2-x)+1+\dfrac{8}{-1-x}\right]+\left[2x+1+\dfrac{8}{x+1}\right]=-4-2x+1+2x+1-\dfrac{8}{x+1}+\dfrac{8}{x+1}=-2.$$
+Donc le point $(-1,-1)$ est centre de symétrie de $\mathscr{C}_f$.
+\end{enumerate}
+
+
+
+\end{document}
+
